@@ -2,9 +2,14 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 
 const App = () => {
+  const handleClick = () => {
+    console.log('clicked')
+  }
   return (
     <div>
-      Hello World1122
+      <button onClick={handleClick}>
+        Hello world
+      </button>
     </div>
   )
 }

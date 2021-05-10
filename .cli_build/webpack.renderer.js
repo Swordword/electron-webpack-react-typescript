@@ -4,8 +4,6 @@ const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 
 const WebpackRendererConfig = {
-  mode: 'development',
-  // mode: 'production',
   entry: {
     main: path.resolve(__dirname, '../app/renderer/index.tsx'),
   },

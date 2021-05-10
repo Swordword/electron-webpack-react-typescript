@@ -5,8 +5,6 @@ const path = require('path')
 // const htmlWebpackPlugin = require('html-webpack-plugin')
 
 const WebpackMainConfig = {
-  mode: 'development',
-  // mode: 'production',
   entry: {
     main: path.resolve(process.cwd(), 'app/main/index.ts'),
   },

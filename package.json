@@ -1,20 +1,64 @@
 {
   "name": "electron-webpack-react-ts",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/main.js",
   "repository": "https://github.com/Swordword/electron-webpack-react-ts.git",
   "author": "John Massive <massivejohn123@gmail.com>",
+  "description": "build your electron with webpack using react && typescript",
+  "keywords": [
+    "electron",
+    "webpack",
+    "react",
+    "typescript"
+  ],
   "license": "MIT",
   "scripts": {
     "main": "webpack --config ./.cli_build/webpack.main.js",
     "renderer": "webpack serve --config ./.cli_build/webpack.renderer.js",
     "start": "electron ./dist/main.js",
-    "dev": "node ./.cli_build/dev.js"
+    "dev": "node ./.cli_build/dev.js",
+    "build": "node ./.cli_build/build.js && electron-builder",
+    "build:windows": "node ./.cli_build/build.js && electron-builder --win --x64"
+  },
+  "build": {
+    "productName": "Your App Name",
+    "appId": "com.example.yourapp",
+    "directories": {
+      "output": "build"
+    },
+    "files": [
+      "dist/**/*"
+    ],
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "mac": {
+      "icon": "static/icon.icns"
+    },
+    "win": {
+      "icon": "static/icon.ico"
+    },
+    "linux": {
+      "icon": "static/icons"
+    }
   },
   "devDependencies": {
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.3",
     "electron": "^12.0.7",
+    "electron-builder": "^22.11.1",
     "html-webpack-plugin": "^5.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

@@ -3,26 +3,38 @@ const path = require('path')
 // Package
 const htmlWebpackPlugin = require('html-webpack-plugin')
 
-const WebpackMainConfig = {
+const WebpackRendererConfig = {
   mode: 'development',
   // mode: 'production',
   entry: {
-    main: path.resolve(__dirname, '../app/renderer/index.js'),
+    main: path.resolve(__dirname, '../app/renderer/index.tsx'),
+  },
+  devtool: 'source-map',
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].[contenthash].bundle.js',
   },
-  // devServer: {
-  //   contentBase: path.resolve(__dirname, '../dist'),
-  //   compress: true,
-  //   port: 8765,
-  // },
+
   plugins: [
     new htmlWebpackPlugin({
       template: path.resolve(__dirname, '../app/renderer/index.html'),
     }),
   ],
+  resolve: {
+    // alias: {
+    //   '@': path.resolve(__dirname, '../src/renderer/'),
+    // },
+    extensions: ['.ts', '.tsx', '.js'],
+  },
 }
 
-module.exports = WebpackMainConfig
+module.exports = WebpackRendererConfig

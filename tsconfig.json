@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "sourceMap": true,
+    "target": "ES5",
+    "module": "CommonJS",
+    "outDir": "./dist/ ",
+    "jsx": "react",
+    // 允许使用 import React from "react";
+    "allowSyntheticDefaultImports": true,
+    // any 类型 warning
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "preserveConstEnums": true,
+    "removeComments": true
+  },
+  "exclude": ["node_modules"]
+}

@@ -8,7 +8,16 @@ const WebpackMainConfig = {
   mode: 'development',
   // mode: 'production',
   entry: {
-    main: path.resolve(process.cwd(), 'app/main/index.js'),
+    main: path.resolve(process.cwd(), 'app/main/index.ts'),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
   },
   output: {
     path: path.resolve(process.cwd(), 'dist'),

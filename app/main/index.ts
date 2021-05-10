@@ -1,9 +1,9 @@
 import { app, BrowserWindow, Menu } from 'electron'
 
-let mainWindow
+let mainWindow: BrowserWindow
 
 function createWindow() {
-  let mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
     webPreferences: {

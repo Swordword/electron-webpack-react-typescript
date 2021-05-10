@@ -8,7 +8,8 @@
   "scripts": {
     "main": "webpack --config ./.cli_build/webpack.main.js",
     "renderer": "webpack serve --config ./.cli_build/webpack.renderer.js",
-    "start": "electron ./dist/main.js"
+    "start": "electron ./dist/main.js",
+    "dev": "node ./.cli_build/dev.js"
   },
   "devDependencies": {
     "electron": "^12.0.7",

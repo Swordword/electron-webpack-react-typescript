@@ -1,0 +1,20 @@
+{
+  "name": "electron-webpack-react-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Swordword/electron-webpack-react-ts.git",
+  "author": "John Massive <massivejohn123@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "main": "webpack --config ./.cli_build/webpack.main.js",
+    "renderer": "webpack serve --config ./.cli_build/webpack.renderer.js",
+    "start": "electron ./dist/main.js"
+  },
+  "devDependencies": {
+    "electron": "^12.0.7",
+    "html-webpack-plugin": "^5.3.1",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}

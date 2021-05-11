@@ -32,15 +32,14 @@ function buildMain() {
   return new Promise((resolve) => {
     mainConfig.mode = 'development'
     const compiler = Webpack(mainConfig)
-    compiler.close(() => {
-      console.log('buildMain resolve')
-      resolve()
-    })
+
     compiler.watch({}, (err, stats) => {
       if (err) {
         console.error(err)
         return
       }
+      console.log('buildMain resolve')
+      resolve()
     })
   })
 }

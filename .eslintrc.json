@@ -21,5 +21,14 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "semi": "off",
+        "react/react-in-jsx-scope":"off",
+        "import/no-unresolved":"off",
+        "import/no-extraneous-dependencies":"off",
+        "no-console":"off",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx",".ts",".tsx"] }],
+        "no-plusplus":"off",
+        "camelcase":"off",
+        "import/extensions":"off"
     }
 }

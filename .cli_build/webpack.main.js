@@ -1,5 +1,5 @@
 // Native
-const path = require('path')
+const path = require('path');
 // Package
 // const webpack = require('webpack')
 // const htmlWebpackPlugin = require('html-webpack-plugin')
@@ -22,6 +22,6 @@ const WebpackMainConfig = {
     filename: 'main.js',
   },
   target: 'electron-main',
-}
+};
 
-module.exports = WebpackMainConfig
+module.exports = WebpackMainConfig;

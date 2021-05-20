@@ -13,12 +13,11 @@
   ],
   "license": "MIT",
   "scripts": {
-    "main": "webpack --config ./.cli_build/webpack.main.js",
-    "renderer": "webpack serve --config ./.cli_build/webpack.renderer.js",
-    "start": "electron ./dist/main.js",
     "dev": "node ./.cli_build/dev.js",
     "build": "node ./.cli_build/build.js && electron-builder",
-    "build:windows": "node ./.cli_build/build.js && electron-builder --win --x64"
+    "lint": "eslint --fix .",
+    "build:windows": "node ./.cli_build/build.js && electron-builder --win --x64",
+    "prepare": "husky install"
   },
   "build": {
     "productName": "Your App Name",
@@ -68,6 +67,8 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^5.3.1",
+    "husky": ">=6",
+    "lint-staged": ">=10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "ts-loader": "^9.1.2",
@@ -75,5 +76,10 @@
     "webpack": "^5.36.2",
     "webpack-cli": "^4.7.0",
     "webpack-dev-server": "^3.11.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix"
+    ]
   }
 }

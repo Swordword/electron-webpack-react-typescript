@@ -1,0 +1,4 @@
+!.cli_build/
+/build/**
+/dist/**
+/docs/**

@@ -1,7 +1,7 @@
 // Native
-const path = require('path')
+const path = require('path');
 // Package
-const htmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const WebpackRendererConfig = {
   entry: {
@@ -28,7 +28,7 @@ const WebpackRendererConfig = {
         test: /\.s[ac]ss$/i,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
-       {
+      {
         test: /\.less$/i,
         use: ['style-loader', 'css-loader', 'less-loader'],
       },
@@ -40,7 +40,7 @@ const WebpackRendererConfig = {
   },
 
   plugins: [
-    new htmlWebpackPlugin({
+    new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../app/renderer/index.html'),
     }),
   ],
@@ -51,6 +51,6 @@ const WebpackRendererConfig = {
     extensions: ['.ts', '.tsx', '.js'],
   },
   target: 'electron-renderer',
-}
+};
 
-module.exports = WebpackRendererConfig
+module.exports = WebpackRendererConfig;

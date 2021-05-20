@@ -15,7 +15,6 @@ console.log('env', env)
 
 /**
  * main function
- *
  */
 function main() {
   buildRenderer()

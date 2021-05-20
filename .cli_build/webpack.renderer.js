@@ -11,9 +11,26 @@ const WebpackRendererConfig = {
   module: {
     rules: [
       {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        exclude: /node_modules/,
+      },
+      {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+       {
+        test: /\.less$/i,
+        use: ['style-loader', 'css-loader', 'less-loader'],
       },
     ],
   },
@@ -28,11 +45,12 @@ const WebpackRendererConfig = {
     }),
   ],
   resolve: {
-    // alias: {
-    //   '@': path.resolve(__dirname, '../src/renderer/'),
-    // },
+    alias: {
+      '@': path.resolve(__dirname, '../app/renderer/'),
+    },
     extensions: ['.ts', '.tsx', '.js'],
   },
+  target: 'electron-renderer',
 }
 
 module.exports = WebpackRendererConfig

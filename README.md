@@ -4,7 +4,7 @@
 
 ### Usage
 
-- `git clone git@github.com:Swordword/electron-webpack-react-ts.git`
+- `git clone git@github.com:Swordword/electron-webpack-react-typescript.git`
 
 * `yarn`
 * `yarn dev`

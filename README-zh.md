@@ -1,6 +1,6 @@
 ## 使用 React 和 TypeScript 搭建 electron 软件;
 ### 使用 
-* `git clone git@github.com:Swordword/electron-webpack-react-ts.git`
+* `git clone git@github.com:Swordword/electron-webpack-react-typescript.git`
 - `yarn`
 - `yarn dev`
 ### 打包
